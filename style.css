@@ -5,7 +5,7 @@ body {
   display: grid;
   gap: 3.75rem;
   justify-items: center;
-  margin-top: 3.75rem;
+  margin-top: 3rem;
 }
 
 img {
@@ -38,7 +38,7 @@ p {
 .menu ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1.5rem;
   justify-content: center;
   list-style-type: none;
   margin-top: 2.5rem;
@@ -89,6 +89,10 @@ p {
   right: -1.87rem;
 }
 
+.introducao-cover img {
+  object-fit: cover;
+  height: 100%;
+}
 .botao {
   font-weight: 600;
   background: #e21;
@@ -111,6 +115,7 @@ p {
   padding: 2.5rem;
   align-self: center;
   background-image: url(img/onda.svg);
+  /* word-break: break-all; */ /*quebra de linha */
 }
 
 .vantagens {
@@ -142,4 +147,62 @@ p {
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
+}
+
+/* Media Query */
+
+@media (max-width:1000px) {
+  .conteudo-vantagens {
+    grid-template-columns: 1fr;
+  }
+  .subtitulo {
+    text-align: center;
+  }
+}
+
+@media (max-width:600px) {
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .header {
+    gap: 30px;
+  }
+ 
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+ 
+  .introducao {
+    text-align: left;
+    justify-items: start;
+  }
+  .introducao::before {
+    display: none;
+  }
+  .subtitulo {
+    font-size: 3rem;
+  }
+}
+@media (max-width:426px) {
+  .subtitulo {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .menu ul {
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+    gap: 2.5rem; 
+  }
+  .introducao::before {
+    display: none;
+  }
+  body {
+    gap: 10px;
+    margin-top: 20px;
+  }
+ 
 }
